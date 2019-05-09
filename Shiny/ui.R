@@ -8,30 +8,43 @@
 #
 
 library(shiny)
+library(tidyverse)
+library(stringr)
+blast_data <- read_tsv("plant_vs_worm.blastout_v2.1.gz",
+                       col_names=c("query_id",
+                                   "subject_id",
+                                   "pct_ident",
+                                   "len",
+                                   "mis",
+                                   "gaps",
+                                   "qb",
+                                   "qe",
+                                   "sb",
+                                   "se",
+                                   "E",
+                                   "Score"))
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage( #create the overall page
+shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Iris Data"),
+  titlePanel("Old Faithful Geyser Data"),
   
-  # Some helpful information
-  helpText("This application creates a boxplot to show difference between",
-           "iris species.  Please use the radio box below to choose a trait",
-           "for plotting"),
-  
-  # Sidebar with a radio box to input which trait will be plotted
+  # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      sliderInput("pct_ident", #the input variable that the value will go into
-                   "Choose a species to display:",
-                  min = 0,
-                  max = 100,
+      sliderInput("Score",
+                  "Score:",
+                  min = 1,
+                  max = 50,
                   value = 30)
-      )),
+    ),
     
     # Show a plot of the generated distribution
-    mainPanel(plotOutput("boxPlot")
+    mainPanel(
+      plotOutput("boxPlot")
     )
   )
-)
+))
+
+  
