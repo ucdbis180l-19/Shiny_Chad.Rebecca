@@ -28,21 +28,21 @@ blast_data <- read_tsv("plant_vs_worm.blastout_v2.1.gz",
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Plant Vs Worm BLAST"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      sliderInput("Score",
-                  "Score:",
-                  min = 1,
-                  max = 50,
+      sliderInput("pct_ident",
+                  "Percent Identity:",
+                  min = 0,
+                  max = 100,
                   value = 30)
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-      plotOutput("boxPlot")
+      plotOutput("pointPlot")
     )
   )
 ))
