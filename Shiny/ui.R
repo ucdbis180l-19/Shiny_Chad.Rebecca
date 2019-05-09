@@ -23,11 +23,13 @@ shinyUI(fluidPage( #create the overall page
   # Sidebar with a radio box to input which trait will be plotted
   sidebarLayout(
     sidebarPanel(
-      radioButtons("Species", #the input variable that the value will go into
+      sliderInput("Score", #the input variable that the value will go into
                    "Choose a species to display:",
                    c("Setosa",
                      "Versicolor",
                      "Virginica")
+  ####unfinished boken data here###################################################################
+                  
       )),
     
     # Show a plot of the generated distribution
