@@ -38,12 +38,12 @@ shinyServer(function(input, output) {
   output$boxPlot <- renderPlot({
     
     # set up the plot
-    pl <- ggplot(data = iris,
+    pl <- ggplot(data = blast_data,
                  #Use aes_string below so that input$trait is interpreted
                  #correctly.  The other variables need to be quoted
-                 aes_string(x="Sepal.Length",
-                            y=input$Species,
-                            fill="Sepal.Length"
+                 aes_string(x="len",
+                            y=input$Score,
+                            colour=""
                  )
     )
     
