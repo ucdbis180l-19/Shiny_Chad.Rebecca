@@ -9,6 +9,8 @@
 
 library(shiny)
 
+plant_worm <- read_tsv("plant_vs_worm.blastout_v2.1.gz")
+
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
