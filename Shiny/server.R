@@ -39,6 +39,7 @@ shinyServer(function(input, output) {
     
     # set up the plot
     pl <- ggplot(data = blast_data,
+                 
                  #Use aes_string below so that input$trait is interpreted
                  #correctly.  The other variables need to be quoted
                  aes_string(x="len",
@@ -47,7 +48,7 @@ shinyServer(function(input, output) {
                  )
     )
     
-    # draw the boxplot for the specified trait
+     # draw the boxplot for the specified trait
     pl + geom_point()
   })
 })
