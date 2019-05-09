@@ -42,8 +42,8 @@ shinyServer(function(input, output) {
                  #Use aes_string below so that input$trait is interpreted
                  #correctly.  The other variables need to be quoted
                  aes_string(x="len",
-                            y=input$Score,
-                            colour=""
+                            y="Score",
+                            colour="pct_ident"
                  )
     )
     
