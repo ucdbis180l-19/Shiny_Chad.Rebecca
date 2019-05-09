@@ -43,7 +43,7 @@ shinyServer(function(input, output) {
                  #correctly.  The other variables need to be quoted
                  aes_string(x="len",
                             y="Score",
-                            colour="pct_ident"
+                            color=input$pct_ident
                  )
     )
     
