@@ -33,7 +33,4 @@ shinyServer(function(input, output) {
            pl + geom_point()
   })
 })
-<<<<<<< HEAD
 
-=======
->>>>>>> 6731c15a060a03128bb5ee9e100631ff60ddd2fc
