@@ -20,6 +20,6 @@ shinyServer(function(input, output) {
   output$pointPlot <- renderPlot({
     filter(blast_data, pct_ident >= input$pct_ident, pct_ident < input$pct_ident+1) %>%
     ggplot(         aes_string(x="len",
-                    y="Score")) +
+                    y="Score", color="pct_ident")) +
                     geom_point()      })
 })
