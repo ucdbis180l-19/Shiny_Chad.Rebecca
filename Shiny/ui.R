@@ -41,8 +41,7 @@ shinyUI(fluidPage(
     sidebarPanel(
       radioButtons("E",
                   "E-value:", 
-                  ">.05",
-                  "<.05")
+                  c("A", "B","C"))
     ),
     
     mainPanel(

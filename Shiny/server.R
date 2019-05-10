@@ -16,11 +16,15 @@ blast_data <- read_tsv("plant_vs_worm.blastout_v2.1.gz",
                                    "E",
                                    "Score"))
 
-shinyServer(function(input, output) {
-  output$pointPlot <- renderPlot({
+shinyServer(function(input, output) 
+  {
+  output$pointPlot <- renderPlot
+    ({
+        # filter for %ID
     filter(blast_data, pct_ident >= input$pct_ident, pct_ident < input$pct_ident+1) %>%
-    ggplot(         aes_string(x="len",
-                    y="Score", color="pct_ident")) +
-                    geom_point()      })
-})
+        # filter for E-value
+    ggplot(aes_string(x="len",y="Score", color="pct_ident")) +
+            geom_point()      
+    })
+  })
 
