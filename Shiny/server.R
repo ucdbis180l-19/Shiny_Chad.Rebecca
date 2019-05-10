@@ -18,18 +18,8 @@ blast_data <- read_tsv("plant_vs_worm.blastout_v2.1.gz",
 
 shinyServer(function(input, output) {
   output$pointPlot <- renderPlot({
-    pl <- ggplot(data = blast_data,
-
-                 
-                 #Use aes_string below so that input$trait is interpreted
-                 #correctly.  The other variables need to be quoted
-                 aes_string(x="len",
-                            y="Score",
-                            color=input$pct_ident
-                 )
-    )
-    
-     # draw the boxplot for the specified trait
-           pl + geom_point()
-  })
+    filter(blast_data, pct_ident >= input$pct_ident, pct_ident < input$pct_ident+1) %>%
+    ggplot(         aes_string(x="len",
+                    y="Score")) +
+                    geom_point()      })
 })
