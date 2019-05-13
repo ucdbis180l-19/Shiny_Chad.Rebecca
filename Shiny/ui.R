@@ -9,13 +9,13 @@ shinyUI(fluidPage(
     sidebarPanel(
      sliderInput("pct_ident",
                   "Percent Identity:",
-                  min = 14,
+                  min = 0,
                   max = 100,
-                  value = 30, post="%")),
+                  value = c("0","30"), post="%")),
   sidebarLayout(
     sidebarPanel(
       selectInput("data",
-                   "Choose One:",
+                   "Choose a Data Component:",
                   c("Mismatches",
                     "Gaps",
                     "E.Score"))),
