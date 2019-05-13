@@ -17,7 +17,7 @@ shinyUI(fluidPage(
                    "Choose One:",
                   c("Mismatches",
                     "Gaps",
-                    "E"))),
+                    "E.Score"))),
     mainPanel(
       plotOutput("pointPlot"))
     ))))
