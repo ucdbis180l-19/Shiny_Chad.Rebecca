@@ -24,19 +24,18 @@ blast_data <- read_tsv("plant_vs_worm.blastout_v2.1.gz",
                                    "E",
                                    "Score"))
 
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
-  
   titlePanel("Plant Vs Worm BLAST"),
-  
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("pct_ident",
-                  "Percent Identity:",
-                  min = 14,
-                  max = 100,
-                  value = 30)
-    ),
+    sidebarLayout(
+      sidebarPanel(
+        sliderInput
+        (
+          "pct_ident",
+          "Percent Identity:",
+          min = 14,
+          max = 100,
+          value = 30)
+        ),
   sidebarLayout(
     sidebarPanel(
       radioButtons("E",
